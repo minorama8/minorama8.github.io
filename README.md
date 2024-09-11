@@ -1,1 +1,1 @@
-# minorama8..github.io
+# minorama8.github.io
