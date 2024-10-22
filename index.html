@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Tudor Farm.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Tudor Farm" startnode="16" creator="Twine" creator-version="2.9.2" format="Harlowe" format-version="3.3.9" ifid="8F906248-A6EB-4BB1-9A1D-A3144E9C9100" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Animal Worker" tags="" position="1550,150" size="100,100">Welcome to the barn! There are many tasks you need to complete in order to care of the animals here. 
+<tw-storydata name="Tudor Farm" startnode="4" creator="Twine" creator-version="2.9.2" format="Harlowe" format-version="3.3.9" ifid="8F906248-A6EB-4BB1-9A1D-A3144E9C9100" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Animal Worker" tags="" position="1550,150" size="100,100">Welcome to the barn! There are many tasks you need to complete in order to care of the animals here. 
 
 (text-colour:red)[What would you like to start with?]
 (after:2s)[* [[Milk the cows]]]
@@ -26,7 +26,7 @@ You have a long day of labor ahead of you.
 
 What do you want to start with?
 (after:2s)[* [[Tend to crops]]]
-(after:4s)[* [[Harvesting]]]</tw-passagedata><tw-passagedata pid="4" name="Prepare Food" tags="" position="825,550" size="100,100">
+(after:4s)[* [[Harvesting]]]</tw-passagedata><tw-passagedata pid="4" name="Prepare Food" tags="" position="875,550" size="100,100">
 #You head over to the kitchen 
 (text-colour:red)[What would you like to begin with?] 
 
@@ -36,9 +36,19 @@ What do you want to start with?
 
 </tw-passagedata><tw-passagedata pid="5" name="Serve Food" tags="" position="425,550" size="100,100">You make your way to the dining hall to begin setting the tables for dinner, everyone&#39;s favorite part of the day. You begin placing wooden bowls, plates, and cups on the tables in preparation for the hungry farmworkers and monks. As the hungry people begin to flood the dining halls, you distribute the food for each person at the table and make sure that everyone gets a fair share as well as&#39;&#39; ale &#39;&#39;for the beverage. You overhear evreyone complimenting the sweetness of the [[ale|Brew Ale]] and they wonder how it was made to perfection. 
 
-</tw-passagedata><tw-passagedata pid="6" name="Manage Supplies" tags="" position="625,550" size="100,100">You walk into the pantry and immediately get appalled when you realize how disorganized it is. Knowing the importance of proper storage procedures, you begin tracking ingredients such as flour and herbs in order to avoid waste and spoliage. After organizing the pantry, you look over to the available firewood and notice a shortage.
+or ... 
 
-(after:4s)[&#39;&#39; I wonder what went wrong with the [[carpenters|Forester/Carpenter]] today!&#39;&#39; The cooks will not be happy since they rely on open fires to cook meals.]</tw-passagedata><tw-passagedata pid="7" name="Forester/Carpenter" tags="" position="1075,400" size="100,100">You grab an axe and begin woodcutting but the extreme cold and snow makes it difficult to cut wood effectively. Weather conditions severely effect production rates. This includes rainy weather causing slips and falls or heat leading to dangerous working conditions. Furthermore, overuse of equipment results in tool damages such as dullness, making it harder to cut wood. 
+you want to head [[outside]] for a break with no one noticing...
+
+(set: $worker to &quot;server&quot;)</tw-passagedata><tw-passagedata pid="6" name="Manage Supplies" tags="" position="625,550" size="100,100">You walk into the pantry and immediately get appalled when you realize how disorganized it is. Knowing the importance of proper storage procedures, you begin tracking ingredients such as flour and herbs in order to avoid waste and spoliage. After organizing the pantry, you look over to the available firewood and notice a shortage.
+
+(after:4s)[&#39;&#39; I wonder what went wrong with the [[carpenters|Forester/Carpenter]] today!&#39;&#39; The cooks will not be happy since they rely on open fires to cook meals.]
+
+or ... 
+
+you want to head [[outside]] for a break with no one noticing...
+
+(set: $worker to &quot;supplier&quot;)</tw-passagedata><tw-passagedata pid="7" name="Forester/Carpenter" tags="" position="1075,400" size="100,100">You grab an axe and begin woodcutting but the extreme cold and snow makes it difficult to cut wood effectively. Weather conditions severely effect production rates. This includes rainy weather causing slips and falls or heat leading to dangerous working conditions. Furthermore, overuse of equipment results in tool damages such as dullness, making it harder to cut wood. 
 
 (after:4s)[//You try your best to get a sufficient amount for the cooks, but know that the yield is going to be less than normal today. //]
 
@@ -49,15 +59,33 @@ What do you want to start with?
 
 (b4r:&quot;solid&quot;,&quot;none&quot;)+(b4r-size:0.5,1,0.5,0.6)+(b4r-colour:red)[&lt;p&gt;&lt;a href=&quot;https://www.familysearch.org/en/wiki/File:Medieval_baker_with_his_apprentice.jpg#/media/File:Medieval_baker_with_his_apprentice.jpg&quot;&gt;&lt;img src=&quot;https://www.familysearch.org/en/wiki/img_auth.php/c/c0/Medieval_baker_with_his_apprentice.jpg&quot; alt=&quot;Medieval baker with his apprentice.jpg&quot;&gt;&lt;/a&gt;]
 
-//By// &lt;a href=&quot;https://www.familysearch.org/en/wiki/index.php?curid=115254&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;</tw-passagedata><tw-passagedata pid="9" name="Chop up vegetables" tags="" position="725,775" size="100,100">You help wash and chop up vegetables for the pottage that was going to be later distributed to the farm workers and monks. While cutting through the vegetables, you notice that most of the carrots are not ripe yet! You wonder if this had to do with improper [[harvesting|Harvesting]]...
+//By// &lt;a href=&quot;https://www.familysearch.org/en/wiki/index.php?curid=115254&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
 
-(text-colour:red)[you head back to the] [[kitchen|Prepare Food]]</tw-passagedata><tw-passagedata pid="10" name="Brew Ale" tags="" position="875,775" size="100,100">You begin brewing ale in the barrels. Ale was an essential beverage for daily consumption and was a safer option than water since water was often contaminated. In order to prepare ale, you ferment malted barley, yeast, and water.  Once you finish, you take a sip to taste it and admire the sweetness, hoping everyone at the dining hall enjoys it! Then you...
+or ... 
+
+you want to head [[outside]] for a break with no one noticing...
+
+(set: $worker to &quot;kneading bread&quot;) </tw-passagedata><tw-passagedata pid="9" name="Chop up vegetables" tags="" position="725,775" size="100,100">You help wash and chop up vegetables for the pottage that was going to be later distributed to the farm workers and monks. While cutting through the vegetables, you notice that most of the carrots are not ripe yet! You wonder if this had to do with improper [[harvesting|Harvesting]]...
+
+(text-colour:red)[you head back to the] [[kitchen|Prepare Food]]
+
+or ... 
+
+you want to head [[outside]] for a break with no one noticing...
+
+(set: $worker to &quot;chopping vegetables&quot;)</tw-passagedata><tw-passagedata pid="10" name="Brew Ale" tags="" position="875,775" size="100,100">You begin brewing ale in the barrels. Ale was an essential beverage for daily consumption and was a safer option than water since water was often contaminated. In order to prepare ale, you ferment malted barley, yeast, and water.  Once you finish, you take a sip to taste it and admire the sweetness, hoping everyone at the dining hall enjoys it! Then you...
 
 (text-colour:red)[head back to the] [[kitchen|Prepare Food]].
 
 
 (b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-size:1,1,1,2)+(b4r-colour:red,white)[&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/993fPsW2mSo?si=sL1h0nugV2gkW_Q0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt; ]
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X=&quot;)[(text-colour:black)+(bg:grey)[&#39;&#39;Check out how its done!&#39;&#39;]]</tw-passagedata><tw-passagedata pid="11" name="Tend to crops" tags="" position="1400,625" size="100,100">In order to tend to the crops, you begin plowing the fields using a wooden plow pulled by oxens. You start turning the soil and create furrows to ensure that all parts of the field are cultivated. This physically demanding job is not for the weak. Then you...
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X=&quot;)[(text-colour:black)+(bg:grey)[&#39;&#39;Check out how its done!&#39;&#39;]]
+
+or ... 
+
+you want to head [[outside]] for a break with no one noticing...
+
+(set: $worker to &quot;brewing ale&quot;)</tw-passagedata><tw-passagedata pid="11" name="Tend to crops" tags="" position="1400,625" size="100,100">In order to tend to the crops, you begin plowing the fields using a wooden plow pulled by oxens. You start turning the soil and create furrows to ensure that all parts of the field are cultivated. This physically demanding job is not for the weak. Then you...
 
 (text-colour:#de7cd6)[head back to the] [[field|Field worker]].
 
@@ -84,6 +112,56 @@ What do you want to start with?
 (after:4s)[* [[Animal Worker]]]
 (after:6s)[* [[Kitchen Helper]]]
 (after:8s)[* [[Forester/Carpenter]]]
+</tw-passagedata><tw-passagedata pid="17" name="outside" tags="" position="425,1025" size="100,100">Wow it is so nice outside... I needed to take a breather from the chaos inside with the other $worker workers
+
+[[clearly it is time for a new job]]
+</tw-passagedata><tw-passagedata pid="18" name="clearly it is time for a new job" tags="" position="775,1050" size="100,100">Where should you work now?
+
+(if:$worker is &quot;chopping vegetables&quot;)[You can&#39;t go back to $worker, that is already your job]
+
+Your choices are:
+[[Brew Ale]] 
+[[Knead Bread]] 
+[[Serve Food]] 
+[[Manage Supplies]] 
+
+(if:$worker is &quot;brewing ale&quot;)[You can&#39;t go back to $worker, that is already your job]
+
+Your choices are:
+[[Chop up vegetables]] 
+[[Knead Bread]] 
+[[Serve Food]] 
+[[Manage Supplies]] 
+
+(if:$worker is &quot;kneading bread&quot;)[You can&#39;t go back to $worker, that is already your job]
+
+Your choices are:
+[[Chop up vegetables]] 
+[[Brew Ale]] 
+[[Manage Supplies]] 
+[[Serve Food]] 
+
+(if:$worker is &quot;server&quot;)[You can&#39;t go back to being a $worker, that is already your job]
+
+Your choices are:
+[[Chop up vegetables]] 
+[[Brew Ale]] 
+[[Knead Bread]] 
+[[Manage Supplies]] 
+
+(if:$worker is &quot;supplier&quot;)[You can&#39;t go back to being a $worker, that is already your job]
+
+Your choices are:
+[[Chop up vegetables]] 
+[[Brew Ale]] 
+[[Knead Bread]] 
+[[Serve Food]] 
+
+
+
+
+
+
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
