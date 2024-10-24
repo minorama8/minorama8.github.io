@@ -36,7 +36,9 @@ What do you want to start with?
 
 </tw-passagedata><tw-passagedata pid="5" name="Serve Food" tags="" position="425,550" size="100,100">You make your way to the dining hall to begin setting the tables for dinner, everyone&#39;s favorite part of the day. You begin placing wooden bowls, plates, and cups on the tables in preparation for the hungry farmworkers and monks. As the hungry people begin to flood the dining halls, you distribute the food for each person at the table and make sure that everyone gets a fair share as well as&#39;&#39; ale &#39;&#39;for the beverage. You overhear evreyone complimenting the sweetness of the [[ale|Brew Ale]] and they wonder how it was made to perfection. 
 
-or ... 
+You decide to help yourself to some of the food and choose (dropdown: bind $food, &quot;beef&quot;, &quot;lamb&quot;, &quot;trout&quot;, &quot;mutton&quot;)for protein and (dropdown:bind $dessert, &quot;custard&quot;, &quot;fritters&quot;, &quot;tarts&quot;, &quot;cream of almonds&quot;)for dessert. It is so delicous!
+
+or...
 
 you want to head [[outside]] for a break with no one noticing...
 
@@ -51,6 +53,8 @@ you want to head [[outside]] for a break with no one noticing...
 (set: $worker to &quot;supplier&quot;)</tw-passagedata><tw-passagedata pid="7" name="Forester/Carpenter" tags="" position="1075,400" size="100,100">You grab an axe and begin woodcutting but the extreme cold and snow makes it difficult to cut wood effectively. Weather conditions severely effect production rates. This includes rainy weather causing slips and falls or heat leading to dangerous working conditions. Furthermore, overuse of equipment results in tool damages such as dullness, making it harder to cut wood. 
 
 (after:4s)[//You try your best to get a sufficient amount for the cooks, but know that the yield is going to be less than normal today. //]
+
+You prepare your excuse for what went wrong (input:bind $excuse )
 
 (b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-size:1,1,1,2)+(b4r-colour:red,white)[&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/4pzoMRcPgdY?si=n_xA9wqMp58GHZpT&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt; ]
 (text-colour:black)+(bg:grey)[&#39;&#39;Follow the story of a coppice worker &#39;&#39;]</tw-passagedata><tw-passagedata pid="8" name="Knead Bread" tags="" position="1025,775" size="100,100">You begin kneading dough in order to bake bread. Bread was considered a staple in the Tudor diet due to its accessibility and nutritional value. After baking bread in the oven...
@@ -96,7 +100,7 @@ you want to head [[outside]] for a break with no one noticing...
 (text-colour:#de7cd6)[head back to the] [[field|Field worker]].
 
 </tw-passagedata><tw-passagedata pid="13" name="Milk the cows" tags="" position="1425,300" size="100,100">Milking cows takes patience and proper care to ensure the comfort of the animals. You clean the area first to maintain proper hygeine and prevent the contamination of milk in the process. Then you grab a clean bucket and sit on the milking stool and begin collecting milk. It is crucial to observe the milk and notice any abnormalities such as consistency or abnormal color of the milk. You then store the milk in a cool place so it can preserve.
-
+How many cows were you able to milk (dropdown: bind $cows, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;)
 (b4r:&quot;double&quot;,&quot;none&quot;)+(b4r-colour:red,white)[[Head back to the barn|Animal Worker]]</tw-passagedata><tw-passagedata pid="14" name="Feed the pigs" tags="" position="1550,300" size="100,100">Pigs are the primary source of meat here on the farm so it is important to take good care of them. They were slaughtered at all times of the year and as a result are considered valuable in terms of trade. You begin feeding the pigs leftovers from the kitchen and observe their behaviors to ensure no signs of illness. 
 
 (b4r:&quot;double&quot;,&quot;none&quot;)+(b4r-colour:red,white)[[Head back to the barn|Animal Worker]]</tw-passagedata><tw-passagedata pid="15" name="Graze the sheep" tags="" position="1700,300" size="100,100">You enter the sheeps pen which is made out of wood and straw, and since it is the winter, the sheeps diet consists of hay and grains. Wool harvesting is done annually during the spring and is considered an important raw material leading to the production of blankets and clothing. After feeding the sheeps you...
@@ -107,6 +111,10 @@ you want to head [[outside]] for a break with no one noticing...
 &lt;p&gt;//Image by// &lt;a href=&quot;https://tudortimes.co.uk/military-warfare/the-pilgrimage-of-grace/economic-causes&quot; target=&quot;_blank&quot;&gt;Tudor Times&lt;/a&gt;&lt;/p&gt;
 </tw-passagedata><tw-passagedata pid="16" name="Start" tags="" position="1050,150" size="100,100">&#39;&#39;Signalized through the rooster calls, another day begins at the monestary farm. As you rise from your straw-filled bed long before the sun rises, you head out:&#39;&#39;
  
+ Your name is (dropdown: bind $name, &quot;John&quot;, &quot;Edward&quot;, &quot;Alice&quot;, &quot;Jane&quot;)
+ 
+ Or your name can be  (input: bind $name2)
+ 
 (text-colour:red)[Choose your role:]
 (after:2s)[* [[Field worker]]]
 (after:4s)[* [[Animal Worker]]]
@@ -114,49 +122,51 @@ you want to head [[outside]] for a break with no one noticing...
 (after:8s)[* [[Forester/Carpenter]]]
 </tw-passagedata><tw-passagedata pid="17" name="outside" tags="" position="425,1025" size="100,100">Wow it is so nice outside... I needed to take a breather from the chaos inside with the other $worker workers
 
+Working at this job drives me crazy! 
+They make me feel... (input:bind $feeling)
+
 [[clearly it is time for a new job]]
 </tw-passagedata><tw-passagedata pid="18" name="clearly it is time for a new job" tags="" position="775,1050" size="100,100">Where should you work now?
 
-(if:$worker is &quot;chopping vegetables&quot;)[You can&#39;t go back to $worker, that is already your job]
+(if:$worker is &quot;chopping vegetables&quot;)[You can&#39;t go back to $worker, that is already your job
 
 Your choices are:
 [[Brew Ale]] 
 [[Knead Bread]] 
 [[Serve Food]] 
-[[Manage Supplies]] 
+[[Manage Supplies]]]
 
-(if:$worker is &quot;brewing ale&quot;)[You can&#39;t go back to $worker, that is already your job]
+(if:$worker is &quot;brewing ale&quot;)[You can&#39;t go back to $worker, that is already your job
 
 Your choices are:
 [[Chop up vegetables]] 
 [[Knead Bread]] 
 [[Serve Food]] 
-[[Manage Supplies]] 
+[[Manage Supplies]]]
 
-(if:$worker is &quot;kneading bread&quot;)[You can&#39;t go back to $worker, that is already your job]
-
-Your choices are:
-[[Chop up vegetables]] 
-[[Brew Ale]] 
-[[Manage Supplies]] 
-[[Serve Food]] 
-
-(if:$worker is &quot;server&quot;)[You can&#39;t go back to being a $worker, that is already your job]
+(if:$worker is &quot;kneading bread&quot;)[You can&#39;t go back to $worker, that is already your job
 
 Your choices are:
 [[Chop up vegetables]] 
 [[Brew Ale]] 
-[[Knead Bread]] 
 [[Manage Supplies]] 
+[[Serve Food]]]
 
-(if:$worker is &quot;supplier&quot;)[You can&#39;t go back to being a $worker, that is already your job]
+(if:$worker is &quot;server&quot;)[You can&#39;t go back to being a $worker, that is already your job
 
 Your choices are:
 [[Chop up vegetables]] 
 [[Brew Ale]] 
 [[Knead Bread]] 
-[[Serve Food]] 
+[[Manage Supplies]]]
 
+(if:$worker is &quot;supplier&quot;)[You can&#39;t go back to being a $worker, that is already your job
+
+Your choices are:
+[[Chop up vegetables]] 
+[[Brew Ale]] 
+[[Knead Bread]] 
+[[Serve Food]]]
 
 
 
